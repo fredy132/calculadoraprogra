@@ -4,6 +4,8 @@
  */
 package Calculadora;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Fredy Xingo
@@ -33,8 +35,6 @@ public class Integrar extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jrespuestai = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jcasillai = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -53,22 +53,21 @@ public class Integrar extends javax.swing.JFrame {
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
         jButton21 = new javax.swing.JButton();
         jButton22 = new javax.swing.JButton();
         jButton23 = new javax.swing.JButton();
-        jButton24 = new javax.swing.JButton();
-        jButton25 = new javax.swing.JButton();
+        Ac = new javax.swing.JButton();
         jButton26 = new javax.swing.JButton();
         jButton27 = new javax.swing.JButton();
         jButton28 = new javax.swing.JButton();
-        jButton30 = new javax.swing.JButton();
+        Resultado = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        TxtFuncion = new javax.swing.JTextField();
+        LimInf = new javax.swing.JTextField();
+        LimiteSup = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -118,27 +117,6 @@ public class Integrar extends javax.swing.JFrame {
                 jrespuestaiActionPerformed(evt);
             }
         });
-
-        jPanel2.setBackground(new java.awt.Color(213, 103, 83));
-
-        jcasillai.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jcasillai, javax.swing.GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jcasillai, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE)
-                .addContainerGap())
-        );
 
         jButton2.setBackground(new java.awt.Color(17, 22, 28));
         jButton2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -266,24 +244,44 @@ public class Integrar extends javax.swing.JFrame {
         jButton13.setForeground(new java.awt.Color(125, 78, 88));
         jButton13.setText("raíz");
         jButton13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setBackground(new java.awt.Color(17, 22, 28));
         jButton14.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton14.setForeground(new java.awt.Color(125, 78, 88));
         jButton14.setText("a^n");
         jButton14.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setBackground(new java.awt.Color(17, 22, 28));
         jButton15.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton15.setForeground(new java.awt.Color(125, 78, 88));
         jButton15.setText("+");
         jButton15.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
         jButton16.setBackground(new java.awt.Color(17, 22, 28));
         jButton16.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton16.setForeground(new java.awt.Color(125, 78, 88));
-        jButton16.setText("SEN");
+        jButton16.setText("SIN");
         jButton16.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         jButton17.setBackground(new java.awt.Color(17, 22, 28));
         jButton17.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -296,21 +294,20 @@ public class Integrar extends javax.swing.JFrame {
         jButton18.setForeground(new java.awt.Color(125, 78, 88));
         jButton18.setText("DEL");
         jButton18.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         jButton19.setBackground(new java.awt.Color(17, 22, 28));
         jButton19.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton19.setForeground(new java.awt.Color(125, 78, 88));
         jButton19.setText("n/n");
         jButton19.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jButton20.setBackground(new java.awt.Color(17, 22, 28));
-        jButton20.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton20.setForeground(new java.awt.Color(125, 78, 88));
-        jButton20.setText("ln");
-        jButton20.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton20.addActionListener(new java.awt.event.ActionListener() {
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton20ActionPerformed(evt);
+                jButton19ActionPerformed(evt);
             }
         });
 
@@ -319,12 +316,22 @@ public class Integrar extends javax.swing.JFrame {
         jButton21.setForeground(new java.awt.Color(125, 78, 88));
         jButton21.setText("*");
         jButton21.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         jButton22.setBackground(new java.awt.Color(17, 22, 28));
         jButton22.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton22.setForeground(new java.awt.Color(125, 78, 88));
         jButton22.setText("TAN");
         jButton22.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton22.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton22ActionPerformed(evt);
+            }
+        });
 
         jButton23.setBackground(new java.awt.Color(17, 22, 28));
         jButton23.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -332,23 +339,27 @@ public class Integrar extends javax.swing.JFrame {
         jButton23.setText(")");
         jButton23.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jButton24.setBackground(new java.awt.Color(17, 22, 28));
-        jButton24.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton24.setForeground(new java.awt.Color(125, 78, 88));
-        jButton24.setText("AC");
-        jButton24.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        jButton25.setBackground(new java.awt.Color(17, 22, 28));
-        jButton25.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton25.setForeground(new java.awt.Color(125, 78, 88));
-        jButton25.setText("/");
-        jButton25.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Ac.setBackground(new java.awt.Color(17, 22, 28));
+        Ac.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Ac.setForeground(new java.awt.Color(125, 78, 88));
+        Ac.setText("AC");
+        Ac.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Ac.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AcActionPerformed(evt);
+            }
+        });
 
         jButton26.setBackground(new java.awt.Color(17, 22, 28));
         jButton26.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jButton26.setForeground(new java.awt.Color(125, 78, 88));
         jButton26.setText("-");
         jButton26.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton26.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton26ActionPerformed(evt);
+            }
+        });
 
         jButton27.setBackground(new java.awt.Color(17, 22, 28));
         jButton27.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -361,44 +372,28 @@ public class Integrar extends javax.swing.JFrame {
         jButton28.setForeground(new java.awt.Color(125, 78, 88));
         jButton28.setText("COS");
         jButton28.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton28.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton28ActionPerformed(evt);
+            }
+        });
 
-        jButton30.setBackground(new java.awt.Color(17, 22, 28));
-        jButton30.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jButton30.setForeground(new java.awt.Color(125, 78, 88));
-        jButton30.setText("=");
-        jButton30.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Resultado.setBackground(new java.awt.Color(17, 22, 28));
+        Resultado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        Resultado.setForeground(new java.awt.Color(125, 78, 88));
+        Resultado.setText("=");
+        Resultado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Resultado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ResultadoActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel5.setText("dx");
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 70)); // NOI18N
         jLabel4.setText("ʃ");
-
-        jPanel4.setBackground(new java.awt.Color(213, 103, 83));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 27, Short.MAX_VALUE)
-        );
-
-        jPanel5.setBackground(new java.awt.Color(213, 103, 83));
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 20, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 27, Short.MAX_VALUE)
-        );
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Imagen2.png"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -413,6 +408,18 @@ public class Integrar extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        TxtFuncion.setBackground(new java.awt.Color(214, 104, 83));
+        TxtFuncion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+
+        LimInf.setBackground(new java.awt.Color(17, 21, 28));
+        LimInf.setForeground(new java.awt.Color(214, 104, 83));
+        LimInf.setText("1");
+
+        LimiteSup.setBackground(new java.awt.Color(17, 21, 28));
+        LimiteSup.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LimiteSup.setForeground(new java.awt.Color(214, 104, 83));
+        LimiteSup.setText("2");
 
         javax.swing.GroupLayout jintegrarLayout = new javax.swing.GroupLayout(jintegrar);
         jintegrar.setLayout(jintegrarLayout);
@@ -460,16 +467,13 @@ public class Integrar extends javax.swing.JFrame {
                                     .addGroup(jintegrarLayout.createSequentialGroup()
                                         .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addGroup(jintegrarLayout.createSequentialGroup()
-                                                .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGap(62, 62, 62))
                                             .addGroup(jintegrarLayout.createSequentialGroup()
                                                 .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(12, 12, 12)
                                                 .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                         .addGap(18, 18, 18)
                                         .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -478,11 +482,11 @@ public class Integrar extends javax.swing.JFrame {
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(Ac, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jintegrarLayout.createSequentialGroup()
                                                 .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(74, 74, 74)
-                                                .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                                .addComponent(Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                             .addGroup(jintegrarLayout.createSequentialGroup()
                                 .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -492,16 +496,21 @@ public class Integrar extends javax.swing.JFrame {
                         .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
                             .addGroup(jintegrarLayout.createSequentialGroup()
-                                .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jintegrarLayout.createSequentialGroup()
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(29, 29, 29)
                                 .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jintegrarLayout.createSequentialGroup()
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(jintegrarLayout.createSequentialGroup()
+                                                .addGap(4, 4, 4)
+                                                .addComponent(LimInf, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(jintegrarLayout.createSequentialGroup()
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(LimiteSup, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(12, 12, 12))
+                                    .addGroup(jintegrarLayout.createSequentialGroup()
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)))
+                                .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(jintegrarLayout.createSequentialGroup()
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -509,8 +518,8 @@ public class Integrar extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(jrespuestai))
                                     .addGroup(jintegrarLayout.createSequentialGroup()
-                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
+                                        .addComponent(TxtFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, 395, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap(130, Short.MAX_VALUE))
         );
@@ -525,25 +534,21 @@ public class Integrar extends javax.swing.JFrame {
                             .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jrespuestai)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jintegrarLayout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jintegrarLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addComponent(jLabel5))))
+                        .addGap(58, 58, 58)
+                        .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(TxtFuncion, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jintegrarLayout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jintegrarLayout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(LimiteSup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(39, 39, 39)
+                                .addComponent(LimInf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 36, Short.MAX_VALUE)
+                .addGap(0, 23, Short.MAX_VALUE)
                 .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -560,21 +565,19 @@ public class Integrar extends javax.swing.JFrame {
                     .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton22, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton23, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton24, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Ac, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton25, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton26, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton27, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton28, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton30, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Resultado, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jintegrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -600,24 +603,18 @@ public class Integrar extends javax.swing.JFrame {
 
     private void jrespuestaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrespuestaiActionPerformed
         // TODO add your handling code here:
-        RespuestaI vd = new RespuestaI();
-        vd.setVisible(true);
-        this.setVisible(false);
+        
     }//GEN-LAST:event_jrespuestaiActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"4");
+        InputNumbers("4");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"3");
+        InputNumbers("3");
     }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jintegrarAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jintegrarAncestorAdded
         // TODO add your handling code here:
@@ -625,47 +622,47 @@ public class Integrar extends javax.swing.JFrame {
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"0");
+        InputNumbers("0");
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+".");
+        InputNumbers(".");
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"1");
+        InputNumbers("1");
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"2");
+        InputNumbers("2");
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"5");
+        InputNumbers("5");
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"6");
+        InputNumbers("6");
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"7");
+        InputNumbers("7");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"8");
+       InputNumbers("8");
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        this.jcasillai.setText(this.jcasillai.getText()+"9");
+       InputNumbers("9");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -674,6 +671,104 @@ public class Integrar extends javax.swing.JFrame {
         vd.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultadoActionPerformed
+        // TODO add your handling code here:
+        String coeficiente= "x";
+        try {
+            li = Double.parseDouble(LimInf.getText());
+            ls = Double.parseDouble(LimiteSup.getText());
+            } catch (NumberFormatException e) {
+            System.err.println("Error: No se pudo convertir el String a double.");
+            JOptionPane.showMessageDialog(null, "Ingrese un numero en los limites");
+        }
+        if(ls <= li){
+            JOptionPane.showMessageDialog(null, "El limite superior debe ser mayor");
+        }else{
+            if(TxtFuncion.getText().isEmpty()){
+             JOptionPane.showMessageDialog(null, "Ingrese un la expresión");
+        }else{
+            String expretion = TxtFuncion.getText();
+            Integrales integral = new Integrales();
+            integral.setfuncionaderivar(expretion, coeficiente, ls, li);
+            integral.Integrar();
+            RespuestaI vd = new RespuestaI(integral.getfuncionIntegrada());
+            vd.setVisible(true);
+            this.setVisible(false);
+        }
+        }
+        
+        
+        
+    }//GEN-LAST:event_ResultadoActionPerformed
+
+    private void AcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcActionPerformed
+        // TODO add your handling code here:
+        TxtFuncion.setText("");
+    }//GEN-LAST:event_AcActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        String textoActual = TxtFuncion.getText();
+                if (!textoActual.isEmpty()) {
+                    String nuevoTexto = textoActual.substring(0, textoActual.length() - 1);
+                    TxtFuncion.setText(nuevoTexto);
+                }
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "sin()");
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton22ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "tan()");
+    }//GEN-LAST:event_jButton22ActionPerformed
+
+    private void jButton28ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton28ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "cos()");
+    }//GEN-LAST:event_jButton28ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "()^0.5");
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+         String txt = TxtFuncion.getText();
+        TxtFuncion.setText("("+txt+ ")^");
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "/");
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "+");
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "*");
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton26ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton26ActionPerformed
+        // TODO add your handling code here:
+        String txt = TxtFuncion.getText();
+        TxtFuncion.setText(txt+ "-");
+    }//GEN-LAST:event_jButton26ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -710,7 +805,18 @@ public class Integrar extends javax.swing.JFrame {
         });
     }
 
+    private void InputNumbers(String addNumber){
+        
+        TxtFuncion.setText(TxtFuncion.getText() + addNumber);
+    }
+    private double ls;
+    private double li;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Ac;
+    private javax.swing.JTextField LimInf;
+    private javax.swing.JTextField LimiteSup;
+    private javax.swing.JButton Resultado;
+    private javax.swing.JTextField TxtFuncion;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -723,17 +829,13 @@ public class Integrar extends javax.swing.JFrame {
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton20;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton22;
     private javax.swing.JButton jButton23;
-    private javax.swing.JButton jButton24;
-    private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton26;
     private javax.swing.JButton jButton27;
     private javax.swing.JButton jButton28;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton30;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
@@ -745,11 +847,7 @@ public class Integrar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JLabel jcasillai;
     private javax.swing.JPanel jintegrar;
     private javax.swing.JButton jrespuestai;
     // End of variables declaration//GEN-END:variables

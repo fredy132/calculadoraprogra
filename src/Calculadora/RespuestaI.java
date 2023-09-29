@@ -13,10 +13,16 @@ public class RespuestaI extends javax.swing.JFrame {
     /**
      * Creates new form RespuestaI
      */
-    public RespuestaI() {
+    private double resultado;
+    
+    public RespuestaI(double result) {
+        this.resultado = result;
+        
         initComponents();
          this.setTitle("Respuesta Integral");
         this.setLocationRelativeTo(null);
+        
+        
     }
 
     /**
@@ -44,7 +50,8 @@ public class RespuestaI extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 70)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("4.55");
+        jLabel2.setText(Double.isNaN(resultado) ? "Syntax Error" : String.valueOf(resultado)
+        );
 
         jresolverotrai.setBackground(new java.awt.Color(17, 22, 28));
         jresolverotrai.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -84,14 +91,14 @@ public class RespuestaI extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(316, 316, 316)
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(288, 288, 288)
                         .addComponent(jresolverotrai))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(318, 318, 318)
-                        .addComponent(jmenu)))
+                        .addComponent(jmenu))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(182, 182, 182)
+                        .addComponent(jLabel2)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -104,9 +111,9 @@ public class RespuestaI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(jLabel2)
-                .addGap(36, 36, 36)
+                .addGap(28, 28, 28)
                 .addComponent(jresolverotrai)
                 .addGap(34, 34, 34)
                 .addComponent(jmenu)
@@ -172,12 +179,14 @@ public class RespuestaI extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            double n = 3;
+           
             public void run() {
-                new RespuestaI().setVisible(true);
+                new RespuestaI(n).setVisible(true);
             }
         });
     }
-
+   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -13,12 +13,14 @@ public class Respuesta extends javax.swing.JFrame {
     /**
      * Creates new form Respuesta
      */
-    public Respuesta() {
+    public Respuesta(String result) {
+        this.resultado = result;
         initComponents();
-         this.setTitle("Respuesta Derivada");
+        this.setTitle("Respuesta Derivada");
         this.setLocationRelativeTo(null);
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -44,7 +46,7 @@ public class Respuesta extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Arial", 0, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("3x^2+4-raíz(34)");
+        jLabel2.setText(resultado);
 
         jresolverotrad.setBackground(new java.awt.Color(17, 22, 28));
         jresolverotrad.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
@@ -76,7 +78,7 @@ public class Respuesta extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(237, Short.MAX_VALUE)
+                .addContainerGap(286, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(228, 228, 228))
             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -168,14 +170,16 @@ public class Respuesta extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Respuesta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            String n = "0";
             public void run() {
-                new Respuesta().setVisible(true);
+                new Respuesta(n).setVisible(true);
             }
         });
     }
+    private String resultado; 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
